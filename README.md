@@ -1,5 +1,7 @@
 # x86-to-C interface programming project
 This is the repository for the x86-to-C interface programming project of S12 LBYARCH MP Group 3.
+#### Herrera, Rowell
+#### Ughoc, Daniella
 
 ## Table of Contents
 - [Introduction](#introduction)
