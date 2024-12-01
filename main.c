@@ -18,7 +18,7 @@ int main() {
 	int height = 1;
 	int i;
 
-	clock_t start, end;
+	clock_t startC, endC, startASM, endASM;
 	double time_taken;
 	printf("Input:\n");
 	do {
@@ -47,9 +47,9 @@ int main() {
 		y[i] = x[i];
 	}
 
-	start = clock();
+	startC = clock();
 	cConvert(ARRAY_SIZE, y);
-	end = clock();
+	endC = clock();
 
 	printf("\nOutput in C:\n");
 	count = 1;
@@ -62,15 +62,10 @@ int main() {
 		else
 			count++;
 	}
-
-	printf("\nTime Computation:\n");
-	printf("Start: %ld, End: %ld\n", start, end);
-	time_taken = ((double)(end - start) * 1000 / CLOCKS_PER_SEC);
-	printf("Time ms = %lf\n", time_taken);
 	
-	start = clock();
+	startASM = clock();
 	imgCvtGrayIntToDouble(ARRAY_SIZE, x);
-	end = clock();
+	endASM = clock();
 
 	printf("\nOutput");
 	printf(" in x86-64");
@@ -86,9 +81,14 @@ int main() {
 			count++;
 	}
 	
-	printf("\nTime Computation:\n");
-	printf("Start: %ld, End: %ld\n", start, end);
-	time_taken = ((double)(end - start) * 1000 / CLOCKS_PER_SEC);
+	printf("\nTime Computation for C:\n");
+	printf("Start: %ld, End: %ld\n", startC, endC);
+	time_taken = ((double)(endC - startC) * 1000 / CLOCKS_PER_SEC);
+	printf("Time ms = %lf\n", time_taken);
+	
+	printf("\nTime Computation for x86-64:\n");
+	printf("Start: %ld, End: %ld\n", startASM, endASM);
+	time_taken = ((double)(endASM - startASM) * 1000 / CLOCKS_PER_SEC);
 	printf("Time ms = %lf\n", time_taken);
 
 	boolean truth = 1;
