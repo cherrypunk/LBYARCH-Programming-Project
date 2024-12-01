@@ -2,7 +2,13 @@
 #include <stdlib.h>
 #include <windows.h>
 #include <time.h>
-
+/*
+void cConvert(long long int n, double* x) {
+	int i;
+	for (i = 0; i < n; i++)
+		x[i] = x[i] / 255.0;
+}
+*/
 extern void imgCvtGrayIntToDouble(long long int n, double* x);
 
 int main() {
@@ -34,13 +40,41 @@ int main() {
 			i--;
 		}
 	}
-	
+	/*
+	double* y;
+	y = (double*)malloc(ARRAY_BYTES);
+	for (i = 0; i < ARRAY_SIZE; i++) {
+		y[i] = x[i];
+	}
 
+	start = clock();
+	cConvert(ARRAY_SIZE, y);
+	end = clock();
+
+	printf("\nOutput in C:\n");
+	count = 1;
+	for (i = 0; i < ARRAY_SIZE; i++) {
+		printf("%.2lf ", y[i]);
+		if (count == width) {
+			printf("\n");
+			count = 1;
+		}
+		else
+			count++;
+	}
+
+	printf("\nTime Computation:\n");
+	printf("Start: %ld, End: %ld\n", start, end);
+	time_taken = ((double)(end - start) * 1000 / CLOCKS_PER_SEC);
+	printf("Time ms = %lf\n", time_taken);
+	*/
 	start = clock();
 	imgCvtGrayIntToDouble(ARRAY_SIZE, x);
 	end = clock();
 	
-	printf("\nOutput:\n");
+	printf("\nOutput");
+	//printf(" in x86-64");
+	printf(":\n");
 	count = 1;
 	for (i = 0; i < ARRAY_SIZE; i++) {
 		printf("%.2lf ", x[i]);
@@ -51,11 +85,11 @@ int main() {
 		else 
 			count++;
 	}
-	
+	/*
 	printf("\nTime Computation:\n");
 	printf("Start: %ld, End: %ld\n", start, end);
 	time_taken = ((double)(end - start) * 1000 / CLOCKS_PER_SEC);
 	printf("Time ms = %lf\n", time_taken);
-
+	*/
 	return 0;
 }
