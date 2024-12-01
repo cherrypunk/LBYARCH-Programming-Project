@@ -1,3 +1,5 @@
+
+https://github.com/user-attachments/assets/f0c5fecb-0bab-48ae-a867-808ed8ccbf27
 # x86-to-C interface programming project
 This is the repository for the x86-to-C interface programming project of S12 LBYARCH MP Group 3.
 
@@ -5,6 +7,7 @@ This is the repository for the x86-to-C interface programming project of S12 LBY
 - [Introduction](#introduction)
 - [Specification](#specification)
 - [Compiling and Running the Program](#Compiling-and-Running-the-Program)
+- [Program Output with the Correctness Check](#Program-Output-with-the-Correctness-Check)
 - [Execution Time](#execution-time)
 - [Analysis](#analysis)
 - [Conclusion](#conclusion)
@@ -50,14 +53,26 @@ https://github.com/user-attachments/assets/8b9586f7-4fc5-474d-8ed3-d769981e1b0c
 https://github.com/user-attachments/assets/2abd7c7d-042c-4348-a1a0-ab5bed69b248
 
 - Execution of the program
-  ->input: sample input and 10*10
+  ->input: sample input and 10x10
 
 
 https://github.com/user-attachments/assets/442990cc-4233-4042-bd4a-b726fec6ddb7
 
- ->input: 100*100 and 1000*1000
+ ->input: 100x100 
+ 
+
+https://github.com/user-attachments/assets/0ac303ed-ebc5-4ccd-a3ef-8a0c557bfe80
 
 
+ ->input: 1000x1000
+
+
+
+https://github.com/user-attachments/assets/978b584f-1691-4185-a4ab-7c328c99f4c2
+
+
+
+## Program Output with the Correctness Check
 
 ## Execution Time
 Table 1. Execution Time (in milliseconds) Across Different Matrix Sizes (10x10, 100x100, 1000x1000)
