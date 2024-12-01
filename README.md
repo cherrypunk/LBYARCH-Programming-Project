@@ -1,5 +1,3 @@
-
-https://github.com/user-attachments/assets/f0c5fecb-0bab-48ae-a867-808ed8ccbf27
 # x86-to-C interface programming project
 This is the repository for the x86-to-C interface programming project of S12 LBYARCH MP Group 3.
 
