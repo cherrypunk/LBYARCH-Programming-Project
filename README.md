@@ -8,7 +8,6 @@ This is the repository for the x86-to-C interface programming project of S12 LBY
 - [Program Output with the Correctness Check](#Program-Output-with-the-Correctness-Check)
 - [Execution Time](#execution-time)
 - [Analysis](#analysis)
-- [Conclusion](#conclusion)
   
 ## Introduction
 This repository contains a program that converts grayscale image pixel values from an integer (uint8) format to a float format (double precision) using both C and x86-64 assembly. The C program managed input reading, allocating memory, timing, and printing the output values. Meanwhile, the actual conversion operation was done by calling an assembly function which used scalar SIMD registers and scalar SIMD instructions. For comparison purposes, a C function with the very same functionality as the assembly program was also added. The average execution times for both the assembly and the C function were timed and calculated seperately for different matrix sizes (10x10, 100x100, 1000x1000) by running the program 30 times. Finally, a short analysis was also added to compare the performance of the assembly function and the C function in terms of their execution time.
@@ -71,6 +70,14 @@ https://github.com/user-attachments/assets/978b584f-1691-4185-a4ab-7c328c99f4c2
 
 
 ## Program Output with the Correctness Check
+ -> output for the sample input
+![f3316492-98cf-4c97-8c44-4b99696b39b7](https://github.com/user-attachments/assets/4a0ead1b-5727-4829-8047-e9bf25448cfe)
+
+
+ -> output for the 10x10 matrix
+
+![319c0505-8d0c-4a83-9382-3a624ef69dbc](https://github.com/user-attachments/assets/0210ce45-eaf3-44ab-ab6c-19fe54e42245)
+
 
 ## Execution Time
 Table 1. Execution Time (in milliseconds) Across Different Matrix Sizes (10x10, 100x100, 1000x1000)
@@ -112,6 +119,10 @@ Table 1. Execution Time (in milliseconds) Across Different Matrix Sizes (10x10, 
 
 ## Analysis
 
+If we take a look at the conversion of a 10x10 matrix, both Assembly and C took an average of 0 ms. From here, we can deduce that both Assembly and C are able to perform relatively fast on a small dataset and their performance difference is negligible since there is only a minimal computational load. Meanwhile, when the matrix size is increased to 100x100, there is a slight increase in the performance time of C compared to Assembly with the former having an average of 0.033 ms and the latter still 0 ms. This suggests that while both still perform quite efficiently, C takes more time to execute. However, the performance difference becomes more apparent in the 1000*1000 matrix. C had an average time of 1.966666667 ms while Assembly had an average time of 1.866666667 ms. Essentially, Assembly's average time was *faster* by  approximately 5.08% compared to C. If the dataset were even larger, we can infer that C’s execution time would grow considerably than that of Assembly.
 
-## Conclusion
+A possible explanation as to why Assembly is able to perform faster than C lies with the fact that the registers where the data are stored in Assembly are found inside the CPU and does not need to be fetched from the main memory. Contrastingly, C requires frequent storage and retrieval from the memory. The minimal memory access of Assembly makes it far more efficient compared to performing operations through high-level C code. However, it does not go without saying that Assembly also has it limitations. Assembly requires more detailed management of the registers and memory which can be quite complex when dealing with more complex programs. 
+
+This opens us to the idea of combining and interfacing Assembly with C to achieve a sense of balance between performance and control. Just like in this program, we can use Assembly for the computationally-intensive tasks while we can use C to handle the remaining parts of the program such as input/ouput operation, error handling and et cetera. This approach will allow programmers to build performance-critical programs without sacrificing manageability.
+
 
