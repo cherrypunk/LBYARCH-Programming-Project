@@ -3,12 +3,36 @@ This is the repository for the x86-to-C interface programming project of S12 LBY
 
 ## Table of Contents
 - [Introduction](#introduction)
+- [Specification](#specification)
 - [Execution Time](#execution-time)
 - [Analysis](#analysis)
 - [Conclusion](#conclusion)
   
 ## Introduction
 This repository contains a program that converts grayscale image pixel values from an integer (uint8) format to a float format (double precision) using both C and x86-64 assembly. The C program managed input reading, allocating memory, timing, and printing the output values. Meanwhile, the actual conversion operation was done by calling an assembly function which used scalar SIMD registers and scalar SIMD instructions. For comparison purposes, a C function with the very same functionality as the assembly program was also added. The average execution times for both the assembly and the C function were timed and calculated seperately for different matrix sizes (10x10, 100x100, 1000x1000) by running the program 30 times. Finally, a short analysis was also added to compare the performance of the assembly function and the C function in terms of their execution time.
+
+## Specification
+Implement a program that converts the grayscale image representation from int based to float based using C and x86 assembly language. Implement the function imgCvtGrayIntToDouble().
+*Required to use functional scalar SIMD registers
+*Required to use functional scalar SIMD floating-point instructions
+
+#### Input: height, width, integer pixel values
+Example:
+3 4
+
+64,  89,  114, 84
+
+140, 166, 191, 84
+
+216, 242, 38,  84
+
+#### Output: Double Float pixel values
+Example:
+0.25 0.35 0.45 0.33
+
+0.55 0.65 0.75 0.33
+
+0.85 0.95 0.15 0.33
 
 ## Execution Time
 Table 1. Execution Time (in milliseconds) Across Different Matrix Sizes (10x10, 100x100, 1000x1000)
