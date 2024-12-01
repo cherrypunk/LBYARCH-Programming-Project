@@ -39,11 +39,23 @@ Example:
 0.85 0.95 0.15 0.33
 
 ## Compiling-and-Running-the-Program
+### Note: Please turn on the video audio to hear the discussion
+- Source Code
 
-The video below discusses our source code:
+https://github.com/user-attachments/assets/8b9586f7-4fc5-474d-8ed3-d769981e1b0c
+
+- Compiling the program
 
 
-https://github.com/user-attachments/assets/7e19237d-ef71-4eed-a010-049031318c6f
+https://github.com/user-attachments/assets/2abd7c7d-042c-4348-a1a0-ab5bed69b248
+
+- Execution of the program
+  ->input: sample input and 10*10
+
+
+https://github.com/user-attachments/assets/442990cc-4233-4042-bd4a-b726fec6ddb7
+
+ ->input: 100*100 and 1000*1000
 
 
 
