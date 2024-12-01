@@ -41,7 +41,7 @@ Example:
 0.85 0.95 0.15 0.33
 
 ## Compiling-and-Running-the-Program
-### Note: Please turn on the video audio to hear the discussion
+### Note: Please turn on the video's audio to hear the discussion
 - Source Code
 
 https://github.com/user-attachments/assets/8b9586f7-4fc5-474d-8ed3-d769981e1b0c
