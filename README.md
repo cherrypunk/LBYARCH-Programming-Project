@@ -4,6 +4,7 @@ This is the repository for the x86-to-C interface programming project of S12 LBY
 ## Table of Contents
 - [Introduction](#introduction)
 - [Specification](#specification)
+- [Compiling and Running the Program](#Compiling-and-Running-the-Program)
 - [Execution Time](#execution-time)
 - [Analysis](#analysis)
 - [Conclusion](#conclusion)
@@ -13,7 +14,9 @@ This repository contains a program that converts grayscale image pixel values fr
 
 ## Specification
 Implement a program that converts the grayscale image representation from int based to float based using C and x86 assembly language. Implement the function imgCvtGrayIntToDouble().
+
 *Required to use functional scalar SIMD registers
+
 *Required to use functional scalar SIMD floating-point instructions
 
 #### Input: height, width, integer pixel values
@@ -28,11 +31,17 @@ Example:
 
 #### Output: Double Float pixel values
 Example:
+
 0.25 0.35 0.45 0.33
 
 0.55 0.65 0.75 0.33
 
 0.85 0.95 0.15 0.33
+
+## Compiling-and-Running-the-Program
+
+The video below discusses our source code, compilation, and execution of the program.
+
 
 ## Execution Time
 Table 1. Execution Time (in milliseconds) Across Different Matrix Sizes (10x10, 100x100, 1000x1000)
